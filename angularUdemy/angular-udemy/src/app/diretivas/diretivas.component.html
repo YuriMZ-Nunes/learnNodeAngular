@@ -1,0 +1,15 @@
+<h1>diretivas</h1>
+<button (click)="showButton()">Show name</button>
+<p *ngIf= "showName; else elseBlock" >ta mostrano</p>
+<ng-template #elseBlock>
+  <p>nao ta mostrano</p>
+</ng-template>
+
+<input [(ngModel)]="newName"><br>
+<input type="number" [(ngModel)]="newAge"><br>
+<button (click)="onClickAddNew()">Cadastrar</button>
+
+<ul *ngIf= "showName">
+  <li *ngFor = "let item of list; let i = index;" (click)="onCLickList(i)"><b>Nome:</b> {{item.name}} - <b>Idade:</b> {{item.age}}</li>
+</ul>
+<p>Media de idade: {{avgAge}}</p>
